@@ -22,7 +22,7 @@ int main(){
         }
 
         if(start!=-1){
-            for(int i=start;i<s.length()-1;i++){
+            for(int i=start+2;i<s.length()-1;i++){
                 if(s[i]=='*' && s[i+1]=='/'){
                     last=i;
                     break;
