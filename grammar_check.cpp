@@ -72,3 +72,8 @@ int main(){
     else cout<<"Rejected\n";
     return 0;
 }
+
+/*
+input:
+10 + (5+3)
+*/

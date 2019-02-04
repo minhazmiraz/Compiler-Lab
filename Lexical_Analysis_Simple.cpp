@@ -1,12 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-const char* args[] = {"int", "double", "float", "string", "char", "return"};
-vector<string> keyList(args, args + 6);
 
-const char* args2[] = {"+", "-", "*", "/", "=", "(", ")", "{", "}", ",", ";"};
-vector<string> opList(args2, args2 + 11);
 
 bool isKeyword(string s){
+    vector< string > keyList = {"int", "double", "float", "string", "char", "return"};
     for(int i=0;i<keyList.size();i++){
         if(keyList[i]==s) return 1;
     }
@@ -32,6 +29,7 @@ bool isFunction(string s){
 }
 
 bool isoperator(string s){
+    vector<string> opList = {"+", "-", "*", "/", "=", "(", ")", "{", "}", ",", ";"};
     for(int i=0;i<opList.size();i++){
         if(opList[i]==s) return 1;
     }
@@ -61,20 +59,38 @@ int main(){
 
     cout<<"Keywords: \n";
     for(auto p:keywords) cout<<p<<endl;
-    //for(int i=0;i<keywords.size();i++) cout<<keywords[i]<<endl;
+    cout<<endl;
+
     cout<<"Identifier: \n";
     for(auto p:identifiers) cout<<p<<endl;
-    //for(int i=0;i<identifiers.size();i++) cout<<identifiers[i]<<endl;
+    cout<<endl;
+
     cout<<"Functions: \n";
     for(auto p:funcs) cout<<p<<endl;
-    //for(int i=0;i<funcs.size();i++) cout<<funcs[i]<<endl;
+    cout<<endl;
+
     cout<<"Operators: \n";
     for(auto p:ops) cout<<p<<endl;
-    //for(int i=0;i<ops.size();i++) cout<<ops[i]<<endl;
+    cout<<endl;
+
     cout<<"Digits: \n";
     for(auto p:digits) cout<<p<<endl;
-    //for(int i=0;i<digits.size();i++) cout<<digits[i]<<endl;
+    cout<<endl;
+
     cout<<"Errors:\n";
     for(auto p:errors) cout<<p<<endl;
+    cout<<endl;
     return 0;
 }
+
+
+/*
+input:
+
+int main() {
+    int a = 10 , b = 10 ;
+    a = b * 2 + 10 ;
+    return 0 ;
+}
+
+*/
